@@ -713,5 +713,6 @@
         <jdbc.url>jdbc:mysql://localhost/${db.name}?createDatabaseIfNotExist=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=utf-8&amp;amp;autoReconnect=true</jdbc.url>
         <jdbc.username>root</jdbc.username>
         <jdbc.password></jdbc.password>
+        <jdbc.pool_size>20</jdbc.pool_size>
     </properties>
 </project>
