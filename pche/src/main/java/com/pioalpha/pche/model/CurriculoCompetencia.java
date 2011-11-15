@@ -13,6 +13,7 @@ public class CurriculoCompetencia extends ObjetoBase {
 	private Competencia competencia;
 	private NivelCompetencia nivelCompetencia;
 	private Date dataAlteracao;
+	private boolean visivel;
 	
 	public Long getIdCurriculoCompetencia() {
 		return idCurriculoCompetencia;
@@ -44,6 +45,14 @@ public class CurriculoCompetencia extends ObjetoBase {
 
 	public void setDataAlteracao(Date dataAlteracao) {
 		this.dataAlteracao = dataAlteracao;
+	}
+
+	public boolean isVisivel() {
+		return visivel;
+	}
+
+	public void setVisivel(boolean visivel) {
+		this.visivel = visivel;
 	}
 
 	@Override

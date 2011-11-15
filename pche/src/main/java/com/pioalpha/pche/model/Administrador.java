@@ -15,7 +15,7 @@ public class Administrador extends Candidato {
 	private Collection<Deficiencia> deficiencias;
 	private Collection<Sexo> sexos;
 	private Collection<Competencia> competencias;
-	private Collection<TipoCompetencia> tiposCompetencia;
+	private Collection<CategoriaCompetencia> categoriasCompetencia;
 	private Collection<AreaOcupacao> areasOcupacao;
 	private Collection<EscolaridadeOcupacao> escolaridadesOcupacao;
 	private Collection<Beneficio> beneficios;
@@ -68,12 +68,13 @@ public class Administrador extends Candidato {
 		this.competencias = competencias;
 	}
 
-	public Collection<TipoCompetencia> getTiposCompetencia() {
-		return tiposCompetencia;
+	public Collection<CategoriaCompetencia> getCategoriasCompetencia() {
+		return categoriasCompetencia;
 	}
 
-	public void setTiposCompetencia(Collection<TipoCompetencia> tiposCompetencia) {
-		this.tiposCompetencia = tiposCompetencia;
+	public void setCategoriasCompetencia(
+			Collection<CategoriaCompetencia> categoriasCompetencia) {
+		this.categoriasCompetencia = categoriasCompetencia;
 	}
 
 	public Collection<AreaOcupacao> getAreasOcupacao() {
