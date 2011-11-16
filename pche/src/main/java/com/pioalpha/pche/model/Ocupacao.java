@@ -1,5 +1,8 @@
 package com.pioalpha.pche.model;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang.builder.ToStringStyle;
+
 public class Ocupacao extends ObjetoBase {
 
 	/**
@@ -37,20 +40,32 @@ public class Ocupacao extends ObjetoBase {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
+        .append("idOcupacao", this.idOcupacao)
+        .append("nome", this.nome)
+        .append("descrição", this.descricao)
+        .toString();
 	}
 
 	@Override
 	public boolean equals(Object o) {
-		// TODO Auto-generated method stub
-		return false;
+		if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Ocupacao)) {
+            return false;
+        }
+
+        final Ocupacao ocupacao = (Ocupacao) o;
+
+        return this.hashCode() == ocupacao.hashCode();
 	}
 
 	@Override
 	public int hashCode() {
-		// TODO Auto-generated method stub
-		return 0;
+		int result;
+        result = (nome != null ? nome.hashCode() : 0);
+        return result;
 	}
 
 }

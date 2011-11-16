@@ -2,6 +2,9 @@ package com.pioalpha.pche.model;
 
 import java.util.Collection;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang.builder.ToStringStyle;
+
 public class Competencia extends ObjetoBase {
 
 	/**
@@ -11,8 +14,9 @@ public class Competencia extends ObjetoBase {
 	
 	private Long idCompetencia;
 	private String nome;
+	private boolean generalizada;
 	private TipoCompetencia tipoCompetencia;
-	private Collection<NivelCompetencia> nivelCompetencia;
+	private Collection<NivelCompetencia> niveisCompetencia;
 	
 	public Long getIdCompetencia() {
 		return idCompetencia;
@@ -30,6 +34,14 @@ public class Competencia extends ObjetoBase {
 		this.nome = nome;
 	}
 
+	public boolean isGeneralizada() {
+		return generalizada;
+	}
+
+	public void setGeneralizada(boolean generalizada) {
+		this.generalizada = generalizada;
+	}
+
 	public TipoCompetencia getTipoCompetencia() {
 		return tipoCompetencia;
 	}
@@ -38,30 +50,44 @@ public class Competencia extends ObjetoBase {
 		this.tipoCompetencia = tipoCompetencia;
 	}
 
-	public Collection<NivelCompetencia> getNivelCompetencia() {
-		return nivelCompetencia;
+	public Collection<NivelCompetencia> getNiveisCompetencia() {
+		return niveisCompetencia;
 	}
 
-	public void setNivelCompetencia(Collection<NivelCompetencia> nivelCompetencia) {
-		this.nivelCompetencia = nivelCompetencia;
+	public void setNiveisCompetencia(Collection<NivelCompetencia> niveisCompetencia) {
+		this.niveisCompetencia = niveisCompetencia;
 	}
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
+        .append("idCompetencia", this.idCompetencia)
+        .append("tipoCompetencia", this.tipoCompetencia)
+        .append("nome", this.nome)
+        .append("generalizada", this.generalizada)
+        .append("niveisCompetencia", this.niveisCompetencia)
+        .toString();
 	}
 
 	@Override
 	public boolean equals(Object o) {
-		// TODO Auto-generated method stub
-		return false;
+		if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Competencia)) {
+            return false;
+        }
+
+        final Competencia competencia = (Competencia) o;
+
+        return this.hashCode() == competencia.hashCode();
 	}
 
 	@Override
 	public int hashCode() {
-		// TODO Auto-generated method stub
-		return 0;
+		int result;
+        result = (nome != null ? nome.hashCode() : 0);
+        return result;
 	}
 
 }

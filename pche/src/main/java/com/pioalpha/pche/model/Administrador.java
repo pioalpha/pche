@@ -15,10 +15,12 @@ public class Administrador extends Candidato {
 	private Collection<Deficiencia> deficiencias;
 	private Collection<Sexo> sexos;
 	private Collection<Competencia> competencias;
-	private Collection<TipoCompetencia> tiposCompetencia;
+	private Collection<Escolaridade> escolaridades;
+	private Collection<CategoriaCompetencia> categoriasCompetencia;
 	private Collection<AreaOcupacao> areasOcupacao;
 	private Collection<EscolaridadeOcupacao> escolaridadesOcupacao;
 	private Collection<Beneficio> beneficios;
+	private Collection<OcupacaoCompetencia> ocupacaoCompetencias;
 	
 	public Collection<Estado> getEstados() {
 		return estados;
@@ -68,12 +70,21 @@ public class Administrador extends Candidato {
 		this.competencias = competencias;
 	}
 
-	public Collection<TipoCompetencia> getTiposCompetencia() {
-		return tiposCompetencia;
+	public Collection<Escolaridade> getEscolaridades() {
+		return escolaridades;
 	}
 
-	public void setTiposCompetencia(Collection<TipoCompetencia> tiposCompetencia) {
-		this.tiposCompetencia = tiposCompetencia;
+	public void setEscolaridades(Collection<Escolaridade> escolaridades) {
+		this.escolaridades = escolaridades;
+	}
+
+	public Collection<CategoriaCompetencia> getCategoriasCompetencia() {
+		return categoriasCompetencia;
+	}
+
+	public void setCategoriasCompetencia(
+			Collection<CategoriaCompetencia> categoriasCompetencia) {
+		this.categoriasCompetencia = categoriasCompetencia;
 	}
 
 	public Collection<AreaOcupacao> getAreasOcupacao() {
@@ -99,6 +110,15 @@ public class Administrador extends Candidato {
 
 	public void setBeneficios(Collection<Beneficio> beneficios) {
 		this.beneficios = beneficios;
+	}
+
+	public Collection<OcupacaoCompetencia> getOcupacaoCompetencias() {
+		return ocupacaoCompetencias;
+	}
+
+	public void setOcupacaoCompetencias(
+			Collection<OcupacaoCompetencia> ocupacaoCompetencias) {
+		this.ocupacaoCompetencias = ocupacaoCompetencias;
 	}
 
 	@Override
