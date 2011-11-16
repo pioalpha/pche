@@ -15,10 +15,12 @@ public class Administrador extends Candidato {
 	private Collection<Deficiencia> deficiencias;
 	private Collection<Sexo> sexos;
 	private Collection<Competencia> competencias;
+	private Collection<Escolaridade> escolaridades;
 	private Collection<CategoriaCompetencia> categoriasCompetencia;
 	private Collection<AreaOcupacao> areasOcupacao;
 	private Collection<EscolaridadeOcupacao> escolaridadesOcupacao;
 	private Collection<Beneficio> beneficios;
+	private Collection<OcupacaoCompetencia> ocupacaoCompetencias;
 	
 	public Collection<Estado> getEstados() {
 		return estados;
@@ -68,6 +70,14 @@ public class Administrador extends Candidato {
 		this.competencias = competencias;
 	}
 
+	public Collection<Escolaridade> getEscolaridades() {
+		return escolaridades;
+	}
+
+	public void setEscolaridades(Collection<Escolaridade> escolaridades) {
+		this.escolaridades = escolaridades;
+	}
+
 	public Collection<CategoriaCompetencia> getCategoriasCompetencia() {
 		return categoriasCompetencia;
 	}
@@ -102,6 +112,15 @@ public class Administrador extends Candidato {
 		this.beneficios = beneficios;
 	}
 
+	public Collection<OcupacaoCompetencia> getOcupacaoCompetencias() {
+		return ocupacaoCompetencias;
+	}
+
+	public void setOcupacaoCompetencias(
+			Collection<OcupacaoCompetencia> ocupacaoCompetencias) {
+		this.ocupacaoCompetencias = ocupacaoCompetencias;
+	}
+
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
@@ -120,4 +139,5 @@ public class Administrador extends Candidato {
 		return 0;
 	}
 
+	
 }

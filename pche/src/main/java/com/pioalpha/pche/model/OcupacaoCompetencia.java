@@ -2,6 +2,9 @@ package com.pioalpha.pche.model;
 
 import java.util.Date;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang.builder.ToStringStyle;
+
 public class OcupacaoCompetencia extends ObjetoBase {
 
 	/**
@@ -48,20 +51,34 @@ public class OcupacaoCompetencia extends ObjetoBase {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
+        .append("idOcupacaoCompetencia", this.idOcupacaoCompetencia)
+        .append("ocupacao", this.ocupacao)
+        .append("competencia", this.competencia)
+        .append("dataAlteracao", this.dataAlteracao)
+        .toString();
 	}
 
 	@Override
 	public boolean equals(Object o) {
-		// TODO Auto-generated method stub
-		return false;
+		if (this == o) {
+            return true;
+        }
+        if (!(o instanceof OcupacaoCompetencia)) {
+            return false;
+        }
+
+        final OcupacaoCompetencia ocupacaoCompetencia = (OcupacaoCompetencia) o;
+
+        return this.hashCode() == ocupacaoCompetencia.hashCode();
 	}
 
 	@Override
 	public int hashCode() {
-		// TODO Auto-generated method stub
-		return 0;
+		int result;
+        result = (ocupacao != null ? ocupacao.hashCode() : 0);
+        result = 29 * result + (competencia != null ? competencia.hashCode() : 0);
+        return result;
 	}
 
 }
