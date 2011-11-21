@@ -11,6 +11,8 @@ public class Teste {
 	public static void main(String[] args) throws ParseException {
 		Administrador adm = new Administrador();
 		
+		DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		
 		//Estados Civeis: Solteiro, Casado, Separado, Divorciado, Viuvo
 		adm.setEstadosCiveis(new ArrayList<EstadoCivil>());
 		EstadoCivil estadoCivil = new EstadoCivil();
@@ -108,24 +110,11 @@ public class Teste {
 
 		//Áreas de Ocupação
 		adm.setAreasOcupacao(new ArrayList<AreaOcupacao>());
-		AreaOcupacao areaOcupacao = new AreaOcupacao();
-		areaOcupacao.setNome("Informática");
-		areaOcupacao.setDescricao("Trabalha na Área de Informática");
-		areaOcupacao.setOcupacoes(ocupacoes);
-		adm.getAreasOcupacao().add(areaOcupacao);
-
-		//Tipo Competência: Linguagens de Programação
-		Collection<TipoCompetencia> tiposCompetencia = new ArrayList<TipoCompetencia>();
-		TipoCompetencia tipoCompetencia = new TipoCompetencia();
-		tipoCompetencia.setNome("Linguagens de Programação");
-		tiposCompetencia.add(tipoCompetencia);
-
-		//Categoria Competência: Técnica
-		adm.setCategoriasCompetencia(new ArrayList<CategoriaCompetencia>());
-		CategoriaCompetencia categoriaCompetencia = new CategoriaCompetencia();
-		categoriaCompetencia.setNome("Técnica");
-		categoriaCompetencia.setTiposCompetencia(tiposCompetencia);
-		adm.getCategoriasCompetencia().add(categoriaCompetencia);
+		AreaOcupacao areaOcupacaoInfo = new AreaOcupacao();
+		areaOcupacaoInfo.setNome("Informática");
+		areaOcupacaoInfo.setDescricao("Trabalha na Área de Informática");
+		areaOcupacaoInfo.setOcupacoes(ocupacoes);
+		adm.getAreasOcupacao().add(areaOcupacaoInfo);
 
 		//Nível Competência: 0 - Noções, 1 - Criação de Classes EJB, ...
 		Collection<NivelCompetencia> niveisCompetenciaJAVAEE = new ArrayList<NivelCompetencia>();
@@ -150,22 +139,35 @@ public class Teste {
 		niveisCompetenciaProgramacao.add(nivelCompetencia);
 
 		//Competência: Programação JAVA EE, Generalizada: false
-		adm.setCompetencias(new ArrayList<Competencia>());
+		Collection<Competencia> competenciasInfo = new ArrayList<Competencia>();
 		Competencia competenciaJAVAEE = new Competencia();
 		competenciaJAVAEE.setNome("Programação JAVA EE");
 		competenciaJAVAEE.setGeneralizada(false);
 		competenciaJAVAEE.setNiveisCompetencia(niveisCompetenciaJAVAEE);
-		competenciaJAVAEE.setTipoCompetencia(tipoCompetencia);
-		adm.getCompetencias().add(competenciaJAVAEE);
+		competenciasInfo.add(competenciaJAVAEE);
 
 		//Competência: Programação em Geral, Generalizada: true 
 		Competencia competenciaProgramacao = new Competencia();
 		competenciaProgramacao.setNome("Qualquer Linguagem");
 		competenciaProgramacao.setGeneralizada(true);
 		competenciaProgramacao.setNiveisCompetencia(niveisCompetenciaProgramacao);
-		competenciaProgramacao.setTipoCompetencia(tipoCompetencia);
-		adm.getCompetencias().add(competenciaProgramacao);
+		competenciasInfo.add(competenciaProgramacao);
 		
+		//Tipo Competência: Linguagens de Programação
+		Collection<TipoCompetencia> tiposCompetencia = new ArrayList<TipoCompetencia>();
+		TipoCompetencia tipoCompetencia = new TipoCompetencia();
+		tipoCompetencia.setNome("Linguagens de Programação");
+		tipoCompetencia.setCompetencias(competenciasInfo);
+		tipoCompetencia.setAreaOcupacao(areaOcupacaoInfo);
+		tiposCompetencia.add(tipoCompetencia);
+
+		//Categoria Competência: Técnica
+		adm.setCategoriasCompetencia(new ArrayList<CategoriaCompetencia>());
+		CategoriaCompetencia categoriaCompetencia = new CategoriaCompetencia();
+		categoriaCompetencia.setNome("Técnica");
+		categoriaCompetencia.setTiposCompetencia(tiposCompetencia);
+		adm.getCategoriasCompetencia().add(categoriaCompetencia);
+
 		//Benfícios: Vale Transporte, Ticket Refeição, Férias, ...
 		adm.setBeneficios(new ArrayList<Beneficio>());
 		Beneficio beneficio = new Beneficio();
@@ -177,8 +179,6 @@ public class Teste {
 		beneficio = new Beneficio();
 		beneficio.setNome("Férias");
 		adm.getBeneficios().add(beneficio);
-		
-		DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		
 		//Escolaridade Ocupação: Ensino Médio Completo para PI, PM
 		adm.setEscolaridadesOcupacao(new ArrayList<EscolaridadeOcupacao>());
@@ -214,10 +214,10 @@ public class Teste {
 		System.out.println(adm.getBeneficios().toString());
 		
 		System.out.println(adm.getCategoriasCompetencia().toString());
-		System.out.println(adm.getCompetencias().toString());
 		
 		System.out.println(adm.getEscolaridadesOcupacao().toString());
 		System.out.println(adm.getOcupacaoCompetencias().toString());
+		
 	}
 	
 }

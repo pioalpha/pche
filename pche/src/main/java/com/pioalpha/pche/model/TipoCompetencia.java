@@ -1,5 +1,7 @@
 package com.pioalpha.pche.model;
 
+import java.util.Collection;
+
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 
@@ -12,6 +14,8 @@ public class TipoCompetencia extends ObjetoBase {
 
 	private Long idTipoCompetencia;
 	private String nome;
+	private AreaOcupacao areaOcupacao;
+	private Collection<Competencia> competencias;
 	
 	public Long getIdTipoCompetencia() {
 		return idTipoCompetencia;
@@ -29,11 +33,29 @@ public class TipoCompetencia extends ObjetoBase {
 		this.nome = nome;
 	}
 
+	public AreaOcupacao getAreaOcupacao() {
+		return areaOcupacao;
+	}
+
+	public void setAreaOcupacao(AreaOcupacao areaOcupacao) {
+		this.areaOcupacao = areaOcupacao;
+	}
+
+	public Collection<Competencia> getCompetencias() {
+		return competencias;
+	}
+
+	public void setCompetencias(Collection<Competencia> competencias) {
+		this.competencias = competencias;
+	}
+
 	@Override
 	public String toString() {
 		return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
         .append("idTipoCompetencia", this.idTipoCompetencia)
         .append("nome", this.nome)
+        .append("areaOcupacao", this.areaOcupacao)
+        .append("competencias", this.competencias)
         .toString();
 	}
 

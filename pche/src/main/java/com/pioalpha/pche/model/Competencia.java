@@ -15,7 +15,6 @@ public class Competencia extends ObjetoBase {
 	private Long idCompetencia;
 	private String nome;
 	private boolean generalizada;
-	private TipoCompetencia tipoCompetencia;
 	private Collection<NivelCompetencia> niveisCompetencia;
 	
 	public Long getIdCompetencia() {
@@ -42,14 +41,6 @@ public class Competencia extends ObjetoBase {
 		this.generalizada = generalizada;
 	}
 
-	public TipoCompetencia getTipoCompetencia() {
-		return tipoCompetencia;
-	}
-
-	public void setTipoCompetencia(TipoCompetencia tipoCompetencia) {
-		this.tipoCompetencia = tipoCompetencia;
-	}
-
 	public Collection<NivelCompetencia> getNiveisCompetencia() {
 		return niveisCompetencia;
 	}
@@ -62,7 +53,6 @@ public class Competencia extends ObjetoBase {
 	public String toString() {
 		return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
         .append("idCompetencia", this.idCompetencia)
-        .append("tipoCompetencia", this.tipoCompetencia)
         .append("nome", this.nome)
         .append("generalizada", this.generalizada)
         .append("niveisCompetencia", this.niveisCompetencia)

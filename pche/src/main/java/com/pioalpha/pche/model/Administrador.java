@@ -14,7 +14,6 @@ public class Administrador extends Candidato {
 	private Collection<EstadoCivil> estadosCiveis;
 	private Collection<Deficiencia> deficiencias;
 	private Collection<Sexo> sexos;
-	private Collection<Competencia> competencias;
 	private Collection<Escolaridade> escolaridades;
 	private Collection<CategoriaCompetencia> categoriasCompetencia;
 	private Collection<AreaOcupacao> areasOcupacao;
@@ -60,14 +59,6 @@ public class Administrador extends Candidato {
 
 	public void setSexos(Collection<Sexo> sexos) {
 		this.sexos = sexos;
-	}
-
-	public Collection<Competencia> getCompetencias() {
-		return competencias;
-	}
-
-	public void setCompetencias(Collection<Competencia> competencias) {
-		this.competencias = competencias;
 	}
 
 	public Collection<Escolaridade> getEscolaridades() {
@@ -139,4 +130,5 @@ public class Administrador extends Candidato {
 		return 0;
 	}
 
+	
 }
