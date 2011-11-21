@@ -129,6 +129,5 @@ public class Administrador extends Candidato {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
 	
 }

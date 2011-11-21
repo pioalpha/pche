@@ -219,5 +219,5 @@ public class Teste {
 		System.out.println(adm.getOcupacaoCompetencias().toString());
 		
 	}
-	
+
 }
